@@ -8,10 +8,11 @@ import 'package:news/core/resources/manager_strings.dart';
 import 'package:news/core/resources/manager_width.dart';
 import 'package:news/core/widgets/base_button.dart';
 import 'package:news/features/out_boarding/controller/out-boarding_controller.dart';
-
+import 'package:news/features/out_boarding/view/widget/progress_indicator.dart';
 import '../../../core/resources/manager_assets.dart';
 import '../../../routes/routes.dart';
 import '../widget/progress_indicator.dart';
+
 
 class OutBoardingScreen extends StatelessWidget {
   OutBoardingScreen({super.key});
