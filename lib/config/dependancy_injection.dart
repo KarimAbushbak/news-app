@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:news/features/out_boarding/controller/out-boarding_controller.dart';
 import '../core/storage/local/database/shared_preferences/app_settings_shared_preferences.dart';
 import '../features/splash/presentaion/controller/splash_controller.dart';
 
@@ -15,6 +16,15 @@ initSplash() {
 disposeSplash() {
   Get.delete<SplashController>();
 }
+
+initoutBoarding() {
+  Get.put<OutBoardingController>(OutBoardingController());
+}
+
+disposeOutBoarding() {
+  Get.delete<OutBoardingController>();
+}
+
 // initAuth() {
 //   disposeSplash();
 //

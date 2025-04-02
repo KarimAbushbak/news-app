@@ -6,4 +6,5 @@ class ManagerRadius {
   static const double r10 = 10;
   static const double r12 = 12;
   static const double r15 = 15;
+  static const double r16 = 16;
 }

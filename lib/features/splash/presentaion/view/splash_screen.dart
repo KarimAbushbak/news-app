@@ -12,18 +12,15 @@ class SplashScreen extends StatelessWidget {
     return GetBuilder<SplashController>(
       builder: (controller) {
         return Scaffold(
-          body: Container(
-            color: ManagerColors.primaryColor,
-            width: double.infinity,
-            height: double.infinity,
-            child: Center(
-              child: Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(
-                          ManagerAssets.home1
-                      ),),
-                ),
+          body: Center(
+            child: Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(
+                        ManagerAssets.splash
+                    ),),
               ),
             ),
           ),

@@ -3,9 +3,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class ManagerColors {
-  static const Color primaryColor = Color(0xff5FD068);
+  static const Color primaryColor = Color(0xff1877F2);
   static const Color skipColor = Color(0xffF5DF99);
   static const Color subTitleColor = Color(0xff00000080);
+  static const Color subTitleOutBoardingColor = Color(0xff4E4B66);
   static const Color loginSubTitleColor = Color(0xffB5B5B5);
   static const Color errorColor = Color(0xfff10707);
 
@@ -17,7 +18,7 @@ class ManagerColors {
   static Color gray = Colors.grey;
   static Color white70 = Colors.white70;
   static Color outBoardingTitleColor = const Color(0xff393939);
-  static const Color progressIndicatorColor = Color(0xffF5DF99);
+  static const Color progressIndicatorColor = Color(0xff1877F2);
   static const Color labelTextColor = Color(0xffB5B5B5);
   static const Color textFieldColor = Color( 0xffF9FFF6);
   static const Color borderColor = Color( 0xffDFDFDF);
