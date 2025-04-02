@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import '../../../routes/routes.dart';
 import '../model/flag_model.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 
 class FlagController extends GetxController {
   List<CountryModel> allCountries = [];
@@ -48,8 +51,13 @@ class FlagController extends GetxController {
     update();
   }
 
-  void onNextPressed() {
-    print('Selected country: ${selectedCountry?.name}');
-    // Navigate or save selection
+
+  void onNextPressed() async {
+    final code = selectedCountry?.countryCode;
+    if (code != null && code.isNotEmpty) {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('country_code', code); // save the selected code
+      Get.offNamed(Routes.topicView); // navigate to home
+    }
   }
 }

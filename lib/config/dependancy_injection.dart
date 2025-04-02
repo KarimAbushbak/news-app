@@ -7,6 +7,7 @@ import 'package:news/features/out_boarding/controller/out-boarding_controller.da
 import 'package:news/features/topic/controller/topic_controller.dart';
 import '../core/storage/local/database/shared_preferences/app_settings_shared_preferences.dart';
 import '../features/auth/presntaion/controller/auth_controller.dart';
+import '../features/home/presentation/controller/home_controller.dart';
 import '../features/splash/presentaion/controller/splash_controller.dart';
 
 initModule() async {
@@ -58,11 +59,11 @@ disposeTopic() {
 }
 
 
-// initHome() {
-//   disposeSplash();
-//
-//   Get.put<HomeController>(HomeController());
-// }
+initHome() {
+  disposeSplash();
+
+  Get.put<HomeController>(HomeController());
+}
 // initLocale(){
 //   Get.put<LocaleNotifierController>(LocaleNotifierController());
 // }

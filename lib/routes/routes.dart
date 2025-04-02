@@ -37,7 +37,8 @@ class RouteGenerator {
         initAuth();
         return MaterialPageRoute(builder: (_) => const RegisterView());
       case Routes.homeView:
-        return MaterialPageRoute(builder: (_) => const HomeView());
+        initHome();
+        return MaterialPageRoute(builder: (_) =>  HomeView());
       case Routes.flagView:
         initFlag();
         return MaterialPageRoute(builder: (_) => const FlagView());

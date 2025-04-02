@@ -71,3 +71,13 @@ class ApiConstants {
   static const String token = 'token';
   static const String id = 'id';
 }
+
+class NewsApiConstants {
+  static const String apiKey = '284f2974ce7b4fe49467407482a3bcb5';
+  static const String baseUrl = 'https://newsapi.org/v2';
+  static const String topHeadlines = '$baseUrl/top-headlines';
+  static const String everything = '$baseUrl/everything';
+  static const String country = 'country';
+  static const String category = 'category';
+  static const String query = 'q';
+}

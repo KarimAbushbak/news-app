@@ -1,7 +1,12 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../../routes/routes.dart';
 
 class TopicController extends GetxController {
-  final List<String> allTopics = [
+  // Available topics from UI
+  final List<String> topics = [
     'National',
     'International',
     'Sport',
@@ -12,40 +17,50 @@ class TopicController extends GetxController {
     'Technology',
     'Science',
     'Art',
-    'Politics'
+    'Politics',
   ];
 
-  List<String> filteredTopics = [];
-  List<String> selectedTopics = [];
+  // Selected topics by user
+  final RxList<String> selectedTopics = <String>[].obs;
 
-  @override
-  void onInit() {
-    super.onInit();
-    filteredTopics = List.from(allTopics);
-  }
+  // Mapping to NewsAPI categories
+  final Map<String, String> topicToCategory = {
+    'National': 'general',
+    'International': 'general',
+    'Sport': 'sports',
+    'Lifestyle': 'entertainment',
+    'Business': 'business',
+    'Health': 'health',
+    'Fashion': 'entertainment',
+    'Technology': 'technology',
+    'Science': 'science',
+    'Art': 'entertainment',
+    'Politics': 'general',
+  };
 
-  void filterTopics(String query) {
-    if (query.isEmpty) {
-      filteredTopics = List.from(allTopics);
-    } else {
-      filteredTopics = allTopics
-          .where((topic) => topic.toLowerCase().contains(query.toLowerCase()))
-          .toList();
-    }
-    update();
-  }
-
+  // Toggle selection
   void toggleTopic(String topic) {
     if (selectedTopics.contains(topic)) {
       selectedTopics.remove(topic);
     } else {
       selectedTopics.add(topic);
     }
-    update();
   }
 
-  void onNextPressed() {
-    print('Selected topics: $selectedTopics');
-    // Navigate to next screen or save selection
+  // Save selected category and navigate
+  Future<void> onNextPressed() async {
+    if (selectedTopics.isEmpty) {
+      Get.snackbar("Error", "Please select at least one topic");
+      return;
+    }
+
+    final prefs = await SharedPreferences.getInstance();
+
+    final selectedTopic = selectedTopics.first;
+    final mappedCategory = topicToCategory[selectedTopic] ?? 'general';
+
+    await prefs.setString('news_category', mappedCategory);
+
+    Get.offNamed(Routes.homeView);
   }
 }
