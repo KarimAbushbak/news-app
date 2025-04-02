@@ -17,7 +17,7 @@ Container progressIndicator({
     decoration: BoxDecoration(
       color: color,
       borderRadius: BorderRadius.circular(
-        ManagerRadius.r8,
+        ManagerRadius.r6,
       ),
     ),
   );

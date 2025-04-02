@@ -10,6 +10,7 @@ import 'package:news/core/widgets/base_button.dart';
 import 'package:news/features/out_boarding/controller/out-boarding_controller.dart';
 import 'package:news/features/out_boarding/view/widget/progress_indicator.dart';
 import '../../../core/resources/manager_assets.dart';
+import '../../../routes/routes.dart';
 
 
 class OutBoardingScreen extends StatelessWidget {
@@ -218,7 +219,9 @@ class OutBoardingScreen extends StatelessWidget {
                                 ? ManagerStrings.start
                                 : ManagerStrings.next,
                             onPressed: () {
-                              controller.pageController.nextPage(
+                              controller.isLastPage()
+                              ? Navigator.pushReplacementNamed(context, Routes.homeView)
+                              : controller.pageController.nextPage(
                                   duration: Duration(
                                     milliseconds: 300,
                                   ),
