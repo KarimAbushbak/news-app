@@ -14,11 +14,11 @@ initModule() async {
 // disposeSplash() {
 //   Get.delete<SplashController>();
 // }
-// initAuth() {
-//   disposeSplash();
-//
-//   Get.put<AuthController>(AuthController());
-// }
+initAuth() {
+  // disposeSplash();
+
+  // Get.put<AuthController>(AuthController());
+}
 //
 // disposeAuth() {
 //   Get.delete<AuthController>();

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'config/dependancy_injection.dart';
+import 'core/routes.dart';
 
 void main() async {
   await initModule();
@@ -13,8 +15,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home : Container(),
+    return GetMaterialApp(
+      initialRoute: Routes.registerView,
+      onGenerateRoute: RouteGenerator.getRoute,
+
+
+
     );
   }
 }
