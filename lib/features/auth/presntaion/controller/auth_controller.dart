@@ -25,7 +25,7 @@ class AuthController extends GetxController with Helpers {
       isLoading.value = true;
       final userCredential = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
-      Get.offAllNamed('/home');
+      Get.offAllNamed(Routes.homeView);
     } on FirebaseAuthException catch (e) {
       Get.snackbar("Login Failed", e.message ?? "Unknown error");
     } finally {
