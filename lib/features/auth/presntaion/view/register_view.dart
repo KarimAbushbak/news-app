@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:news/core/resources/manager_colors.dart';
 import 'package:news/core/resources/manager_font_sizes.dart';
@@ -6,6 +7,7 @@ import 'package:news/core/resources/manager_font_weight.dart';
 import 'package:news/core/resources/manager_height.dart';
 import 'package:news/core/resources/manager_width.dart';
 
+import '../../../../routes/routes.dart';
 import '../controller/auth_controller.dart';
 
 class RegisterView extends StatelessWidget {
@@ -55,7 +57,7 @@ class RegisterView extends StatelessWidget {
                     ),
                     Container(
                       width: double.infinity,
-                      height: ManagerHeight.h48,
+                      height: ManagerHeight.h70,
                       child: TextField(
                         controller: controller.emailController,
                         cursorColor: ManagerColors.primaryColor,
@@ -63,22 +65,22 @@ class RegisterView extends StatelessWidget {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5),
                             borderSide: BorderSide(
-                                color: Colors.black), // 🖤 Black border
+                                color: Colors.grey), // 🖤 Black border
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5),
                             borderSide: BorderSide(
-                                color: Colors.black), // 🖤 Black border
+                                color: Colors.grey), // 🖤 Black border
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide(
-                                color: Colors.black,
+                                color: Colors.grey,
                                 width: 1), // 🖤 Optional: thicker border
                           ),
                           filled: true,
                           fillColor: ManagerColors.textFieldColor,
-                          labelText: "Enter Email",
+                          hintText: "Enter Email",
                           labelStyle: TextStyle(color: ManagerColors.gray),
                         ),
                       ),
@@ -98,7 +100,7 @@ class RegisterView extends StatelessWidget {
                     ),
                     Container(
                       width: double.infinity,
-                      height: ManagerHeight.h48,
+                      height: ManagerHeight.h70,
                       child: TextField(
                         controller: controller.passwordController,
                         cursorColor: ManagerColors.primaryColor,
@@ -106,25 +108,28 @@ class RegisterView extends StatelessWidget {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5),
                             borderSide: BorderSide(
-                                color: Colors.black), // 🖤 Black border
+                                color: Colors.grey), // 🖤 Black border
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5),
                             borderSide: BorderSide(
-                                color: Colors.black), // 🖤 Black border
+                                color: Colors.grey), // 🖤 Black border
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide(
-                                color: Colors.black,
-                             ), // 🖤 Optional: thicker border
+                              color: Colors.grey,
+                            ), // 🖤 Optional: thicker border
                           ),
                           filled: true,
                           fillColor: ManagerColors.textFieldColor,
-                          labelText: "Enter password",
+                          hintText: "Enter password",
                           labelStyle: TextStyle(color: ManagerColors.gray),
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: ManagerHeight.h8,
                     ),
                     SizedBox(
                       height: ManagerHeight.h8,
@@ -190,6 +195,32 @@ class RegisterView extends StatelessWidget {
                         ),
                       ),
                     ),
+                    SizedBox(height: ManagerHeight.h10,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Already Have an Account",
+                          style: TextStyle(
+                              fontSize: ManagerFontSizes.s16,
+                              fontWeight: ManagerFontWeight.w400),
+                        ),
+                        GestureDetector(
+                          onTap:(){
+                            Get.offAllNamed(Routes.loginView);
+
+                          } ,
+                          child: Text(
+                            "Login ",
+                            style: TextStyle(
+                                fontSize: ManagerFontSizes.s16,
+                                fontWeight: ManagerFontWeight.bold,
+                                color: Colors.blue),
+                          ),
+                        ),
+                      ],
+                    )
+
 
                   ],
                 ),

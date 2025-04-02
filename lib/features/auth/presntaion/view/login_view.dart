@@ -8,6 +8,7 @@ import '../../../../core/resources/manager_font_sizes.dart';
 import '../../../../core/resources/manager_font_weight.dart';
 import '../../../../core/resources/manager_height.dart';
 import '../../../../core/resources/manager_width.dart';
+import '../../../../routes/routes.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -78,17 +79,17 @@ class LoginView extends StatelessWidget {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5),
                             borderSide: BorderSide(
-                                color: Colors.black), // 🖤 Black border
+                                color: Colors.grey), // 🖤 Black border
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5),
                             borderSide: BorderSide(
-                                color: Colors.black), // 🖤 Black border
+                                color: Colors.grey), // 🖤 Black border
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide(
-                                color: Colors.black,
+                                color: Colors.grey,
                                 width: 1), // 🖤 Optional: thicker border
                           ),
                           filled: true,
@@ -121,17 +122,17 @@ class LoginView extends StatelessWidget {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5),
                             borderSide: BorderSide(
-                                color: Colors.black), // 🖤 Black border
+                                color: Colors.grey), // 🖤 Black border
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5),
                             borderSide: BorderSide(
-                                color: Colors.black), // 🖤 Black border
+                                color: Colors.grey), // 🖤 Black border
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide(
-                              color: Colors.black,
+                              color: Colors.grey,
                             ), // 🖤 Optional: thicker border
                           ),
                           filled: true,
@@ -185,8 +186,7 @@ class LoginView extends StatelessWidget {
                           onTap: () {},
                           child: Text(
                             "Forgot the Password?",
-                            style: TextStyle(
-                                color: ManagerColors.blue),
+                            style: TextStyle(color: ManagerColors.blue),
                           ),
                         )
                       ],
@@ -221,18 +221,19 @@ class LoginView extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: ManagerHeight.h8,),
+              SizedBox(
+                height: ManagerHeight.h8,
+              ),
               Text(
-                  "or continue with",
+                "or continue with",
                 style: TextStyle(
-                  fontSize: ManagerFontSizes.s14,
-                  color: ManagerColors.gray
-                ),
+                    fontSize: ManagerFontSizes.s14, color: ManagerColors.gray),
               ),
               Row(
                 children: [
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 10),
                     decoration: BoxDecoration(
                       color: Colors.grey.shade100,
                       borderRadius: BorderRadius.circular(8),
@@ -258,14 +259,14 @@ class LoginView extends StatelessWidget {
                     ),
                   ),
 
-                  // 👉 Add space between buttons
                   const SizedBox(width: 16),
 
                   // Google Button
                   Container(
                     width: ManagerWidth.w174,
                     height: ManagerHeight.h48,
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 10),
                     decoration: BoxDecoration(
                       color: Colors.grey.shade100,
                       borderRadius: BorderRadius.circular(8),
@@ -287,8 +288,30 @@ class LoginView extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Dont have an Account",
+                    style: TextStyle(
+                        fontSize: ManagerFontSizes.s16,
+                        fontWeight: ManagerFontWeight.w400),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Get.offAllNamed(Routes.registerView);
+                    },
+                    child: Text(
+                      "SignUp",
+                      style: TextStyle(
+                          fontSize: ManagerFontSizes.s16,
+                          fontWeight: ManagerFontWeight.bold,
+                          color: Colors.blue),
+                    ),
+                  ),
+                ],
               )
-
             ],
           ),
         ),
