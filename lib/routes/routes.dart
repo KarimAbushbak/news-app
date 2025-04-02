@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../config/dependancy_injection.dart';
 import '../core/resources/manager_strings.dart';
+import '../features/auth/presntaion/view/login_view.dart';
+import '../features/auth/presntaion/view/register_view.dart';
 import '../features/splash/presentaion/view/splash_screen.dart';
 
 class Routes {
@@ -20,18 +22,19 @@ class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.splashScreen:
-        initSplash();
+        // initSplash();
         return MaterialPageRoute(builder: (_) => const SplashScreen());
       // case Routes.languageScreen:
       //   return MaterialPageRoute(builder: (_) => const LanguageScreen());
       // case Routes.outBoardingScreen:
       //   return MaterialPageRoute(builder: (_) =>  OutBoardingScreen());
-      // case Routes.loginView:
-      //   initAuth();
-      //   return MaterialPageRoute(builder: (_) => const LoginView());
-      // case Routes.registerView:
-      //   initAuth();
-      //   return MaterialPageRoute(builder: (_) => const RegisterView());
+      case Routes.loginView:
+        initAuth();
+
+        return MaterialPageRoute(builder: (_) => const LoginView());
+      case Routes.registerView:
+        initAuth();
+        return MaterialPageRoute(builder: (_) => const RegisterView());
       // case Routes.homeView:
       //   initHome();
       //   return MaterialPageRoute(builder: (_) => const HomeView());
