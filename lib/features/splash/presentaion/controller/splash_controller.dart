@@ -13,7 +13,7 @@ class SplashController extends GetxController {
         Duration(
           seconds: 2,
         ), () {
-      Get.offAllNamed(Routes.homeView);
+      Get.offAllNamed(Routes.outBoardingScreen);
     });
   }
 }

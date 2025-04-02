@@ -186,7 +186,7 @@ class LoginView extends StatelessWidget {
                           child: Text(
                             "Forgot the Password?",
                             style: TextStyle(
-                                color: ManagerColors.forgotThepassword),
+                                color: ManagerColors.blue),
                           ),
                         )
                       ],
