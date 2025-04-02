@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:news/features/flag/view/flag_view.dart';
 import 'package:news/features/topic/view/topic_view.dart';
 import '../config/dependancy_injection.dart';
 import '../core/resources/manager_strings.dart';
 import '../features/auth/presntaion/view/login_view.dart';
 import '../features/auth/presntaion/view/register_view.dart';
+import '../features/flag/presentation/view/flag_view.dart';
 import '../features/home/presentation/view/home_view.dart';
 import '../features/out_boarding/view/out_boarding_screen.dart';
 import '../features/splash/presentaion/view/splash_screen.dart';

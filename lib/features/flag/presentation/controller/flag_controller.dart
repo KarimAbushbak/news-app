@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import '../../../../routes/routes.dart';
 import '../model/flag_model.dart';
 
 class FlagController extends GetxController {
@@ -50,6 +51,7 @@ class FlagController extends GetxController {
 
   void onNextPressed() {
     print('Selected country: ${selectedCountry?.name}');
+    Get.offAllNamed(Routes.topicView);
     // Navigate or save selection
   }
 }

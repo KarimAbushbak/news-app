@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:news/features/flag/controller/flag_controller.dart';
+import '../../../../routes/routes.dart';
+import '../controller/flag_controller.dart';
 
 class FlagView extends StatelessWidget {
   const FlagView({super.key});
@@ -57,9 +58,9 @@ class FlagView extends StatelessWidget {
                     width: double.infinity,
                     height: 48,
                     child: ElevatedButton(
-                      onPressed: controller.selectedCountry != null
-                          ? () => controller.onNextPressed()
-                          : null,
+                      onPressed: (){
+                        Navigator.pushReplacementNamed(context, Routes.topicView);
+                      },
                       child: const Text('Next'),
                     ),
                   ),

@@ -2,11 +2,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:news/features/flag/controller/flag_controller.dart';
 import 'package:news/features/out_boarding/controller/out-boarding_controller.dart';
 import 'package:news/features/topic/controller/topic_controller.dart';
 import '../core/storage/local/database/shared_preferences/app_settings_shared_preferences.dart';
 import '../features/auth/presntaion/controller/auth_controller.dart';
+import '../features/flag/presentation/controller/flag_controller.dart';
 import '../features/splash/presentaion/controller/splash_controller.dart';
 
 initModule() async {
