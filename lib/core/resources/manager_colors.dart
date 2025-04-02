@@ -9,6 +9,7 @@ class ManagerColors {
   static const Color subTitleOutBoardingColor = Color(0xff4E4B66);
   static const Color loginSubTitleColor = Color(0xffB5B5B5);
   static const Color errorColor = Color(0xfff10707);
+  static const Color blue = Colors.blue;
 
   static Color secondaryColor = Colors.brown;
   static Color brown200 = Colors.brown.shade300;
