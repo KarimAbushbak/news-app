@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../core/resources/manager_colors.dart';
-import '../../../core/resources/manager_height.dart';
-import '../../../core/resources/manager_raduis.dart';
-import '../../../core/resources/manager_width.dart';
+import '../../../../core/resources/manager_colors.dart';
+import '../../../../core/resources/manager_height.dart';
+import '../../../../core/resources/manager_raduis.dart';
+import '../../../../core/resources/manager_width.dart';
 
 Container progressIndicator({
   Color color = ManagerColors.progressIndicatorColor,
@@ -17,7 +17,7 @@ Container progressIndicator({
     decoration: BoxDecoration(
       color: color,
       borderRadius: BorderRadius.circular(
-        ManagerRadius.r8,
+        ManagerRadius.r6,
       ),
     ),
   );

@@ -4,6 +4,7 @@ import '../config/dependancy_injection.dart';
 import '../core/resources/manager_strings.dart';
 import '../features/auth/presntaion/view/login_view.dart';
 import '../features/auth/presntaion/view/register_view.dart';
+import '../features/home/presentation/view/home_view.dart';
 import '../features/out_boarding/view/out_boarding_screen.dart';
 import '../features/splash/presentaion/view/splash_screen.dart';
 
@@ -48,6 +49,8 @@ class RouteGenerator {
       // case Routes.homeView:
       //   initHome();
       //   return MaterialPageRoute(builder: (_) => const HomeView());
+      case Routes.homeView:
+        return MaterialPageRoute(builder: (_) => const HomeView());
       // case Routes.profileView:
       //   initHome();
       //   return MaterialPageRoute(builder: (_) =>  ProfileView());
