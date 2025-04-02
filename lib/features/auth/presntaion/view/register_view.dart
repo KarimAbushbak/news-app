@@ -211,7 +211,7 @@ class RegisterView extends StatelessWidget {
 
                           } ,
                           child: Text(
-                            "Login",
+                            "Login ",
                             style: TextStyle(
                                 fontSize: ManagerFontSizes.s16,
                                 fontWeight: ManagerFontWeight.bold,
